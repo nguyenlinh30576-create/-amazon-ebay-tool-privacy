@@ -1,0 +1,102 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="robots" content="index,follow">
+  <meta name="description" content="Privacy Policy for Amazon eBay Listing Tool.">
+  <title>Privacy Policy — Amazon eBay Listing Tool</title>
+  <style>
+    :root { color-scheme: light; --ink:#172033; --muted:#526174; --line:#e2e8f0; --blue:#155eef; --bg:#f5f7fb; }
+    * { box-sizing:border-box; }
+    body { margin:0; background:var(--bg); color:var(--ink); font:16px/1.65 Arial,Helvetica,sans-serif; }
+    main { max-width:900px; margin:40px auto; padding:0 18px 48px; }
+    article { background:#fff; border:1px solid var(--line); border-radius:16px; padding:clamp(22px,5vw,48px); box-shadow:0 10px 30px rgba(15,23,42,.06); }
+    .brand { color:var(--blue); font-size:12px; font-weight:700; letter-spacing:.08em; text-transform:uppercase; }
+    h1 { font-size:clamp(30px,5vw,42px); line-height:1.15; margin:8px 0; }
+    h2 { font-size:21px; margin:30px 0 8px; }
+    p,li { color:var(--muted); }
+    ul { padding-left:24px; }
+    .updated { font-size:14px; color:#667085; }
+    .intro { font-size:18px; color:#344054; }
+    a { color:var(--blue); overflow-wrap:anywhere; }
+    .contact { background:#f8fafc; border:1px solid var(--line); border-radius:12px; padding:16px; }
+    code { background:#f1f5f9; border-radius:4px; padding:2px 5px; }
+    footer { border-top:1px solid var(--line); margin-top:32px; padding-top:18px; font-size:13px; color:#667085; }
+    @media(max-width:600px) { main { margin:12px auto; padding:0 10px 20px; } article { border-radius:10px; padding:20px 16px; } }
+  </style>
+</head>
+<body>
+<main>
+<article>
+  <div class="brand">Amazon eBay Listing Tool</div>
+  <h1>Privacy Policy</h1>
+  <p class="updated">Effective date: November 27, 2026 · Last updated: November 27, 2026</p>
+  <p class="intro">This Privacy Policy explains how Amazon eBay Listing Tool (the “Extension” and its companion Cloudflare Worker, together the “Service”) handles information when you choose to collect product information in your browser, request eBay category or item-specific recommendations, and connect an eBay account.</p>
+
+  <h2>1. Information the Service handles</h2>
+  <ul>
+    <li><strong>Product information:</strong> When you use the relevant features, the Extension may read a product title, description, images, product details, and item attributes from the product page you choose to process. The Extension processes source-page information in your browser. For eBay category lookup, search text and category identifiers are sent to the Worker. For eBay AI listing preview, the Worker sends the product fields you choose to submit, such as a title, generated SKU, eBay category, selected image URLs, and source item attributes, to eBay.</li>
+    <li><strong>eBay authorization information:</strong> When you connect an eBay account, eBay returns an authorization code. The Worker exchanges it for eBay OAuth tokens. The long-lived refresh token and limited connection metadata are stored in Cloudflare Workers KV. Short-lived access tokens are held temporarily in Worker memory to make authorized API requests.</li>
+    <li><strong>Extension settings and saved records:</strong> The Extension may store its Worker access key, Seller field, and saved export/item-specific records in Chrome extension or browser local storage. Saved records may include a SKU, product title, eBay category ID, exported aspect values, recommendation reference, source labels, and save time.</li>
+    <li><strong>Technical information:</strong> Cloudflare processes network and operational information needed to deliver and protect the Worker. Worker runtime logs may contain request or error details when an API request fails.</li>
+  </ul>
+  <p>The Service does not ask for your eBay password, Amazon password, or payment-card number. You sign in directly on eBay’s authorization page.</p>
+
+  <h2>2. How information is used</h2>
+  <ul>
+    <li>To collect and organize product information that you choose to process in the Extension.</li>
+    <li>To search eBay categories and retrieve category-specific item aspects.</li>
+    <li>To submit selected product fields to eBay’s Inventory Mapping API for listing-preview and item-specific recommendations.</li>
+    <li>To authorize, refresh, check, and disconnect the eBay account you connect.</li>
+    <li>To secure the Service, troubleshoot failures, and prevent unauthorized use of the Worker.</li>
+  </ul>
+
+  <h2>3. Storage and retention</h2>
+  <ul>
+    <li><strong>On your device:</strong> Extension settings and saved export records remain in browser/Chrome extension local storage until you clear the relevant browser or extension data or remove the Extension.</li>
+    <li><strong>On Cloudflare:</strong> The eBay refresh token and connection metadata remain in the configured KV namespace until you disconnect the eBay account, the stored token is deleted, or the Service removes an invalid token. OAuth state values used during sign-in expire automatically.</li>
+    <li><strong>Temporary processing:</strong> Short-lived OAuth access tokens and category/aspect caches are held in Worker memory for limited periods. The Service is not designed to store submitted product titles, image URLs, or aspect payloads as persistent KV records.</li>
+    <li><strong>Operational logs:</strong> Cloudflare may retain Worker logs and request metadata according to the Cloudflare account’s logging configuration and applicable Cloudflare terms.</li>
+  </ul>
+
+  <h2>4. Sharing and service providers</h2>
+  <p>The Service does not sell or rent personal information. Information is shared only as needed to provide the features you request:</p>
+  <ul>
+    <li><strong>eBay:</strong> Product fields submitted for listing preview, category/taxonomy requests, and OAuth authorization data are sent to eBay APIs. eBay handles that information under its own terms and privacy policy.</li>
+    <li><strong>Cloudflare:</strong> Worker hosting, KV storage, network delivery, and operational logging are provided by Cloudflare and are subject to Cloudflare’s terms and privacy documentation. Cloudflare may process or store data in locations where its services operate.</li>
+  </ul>
+  <p>The Service does not intentionally send your Amazon password or browser cookies to the Worker. Only fields needed for a feature you invoke are transmitted.</p>
+
+  <h2>5. Security</h2>
+  <p>The Service uses HTTPS for its network endpoints, checks a separate Worker access key for Extension API requests, and keeps the eBay refresh token on the Worker side rather than returning it to the Extension. No internet service can guarantee absolute security. Keep your Extension access key private and use devices and browser profiles you trust.</p>
+
+  <h2>6. Your choices and deletion</h2>
+  <ul>
+    <li>You can disconnect the eBay account from the Extension. The Service is designed to remove the stored refresh-token record from its KV namespace when you disconnect.</li>
+    <li>You can revoke the application’s access from your eBay account’s third-party app access settings.</li>
+    <li>You can clear local Extension data or remove the Extension to delete locally stored settings and saved records.</li>
+    <li>You can contact the Service using the contact information below for privacy questions or deletion requests relating to information held by the Service.</li>
+  </ul>
+
+  <h2>7. Third-party websites and services</h2>
+  <p>The Extension may open or read product pages on Amazon or Walmart at your direction. Those websites are independent services and their own privacy policies apply. eBay and Cloudflare are also independent providers; their privacy practices are not controlled by the Service.</p>
+
+  <h2>8. Children</h2>
+  <p>The Service is intended for people using e-commerce seller tools and is not designed for children. The Service does not knowingly request personal information from children.</p>
+
+  <h2>9. Changes to this Policy</h2>
+  <p>This Policy may be updated when the Service’s features or data practices change. The effective date at the top of this page indicates the latest version. Material changes will be reflected at this URL.</p>
+
+  <h2>10. Contact</h2>
+  <div class="contact">
+    <p><strong>Amazon eBay Listing Tool — Privacy Contact</strong></p>
+    <p><strong>Before publishing:</strong> Replace <code>REPLACE_WITH_YOUR_SUPPORT_EMAIL</code> with a real email address that you control. Do not publish this placeholder.</p>
+    <p>Email: <a href="mailto:REPLACE_WITH_YOUR_SUPPORT_EMAIL">REPLACE_WITH_YOUR_SUPPORT_EMAIL</a></p>
+  </div>
+
+  <footer>Amazon eBay Listing Tool is an independent application and is not affiliated with or endorsed by eBay, Amazon, or Walmart. Their names are used only to identify supported services.</footer>
+</article>
+</main>
+</body>
+</html>
